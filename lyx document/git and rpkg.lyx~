@@ -1,0 +1,805 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Warsaw}
+% or ...
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+
+\usepackage{tikz}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+GitHub And R Packages 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Github and R packages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+J.
+ Lambert, 
+\begin_inset Formula $M.S.,\,M.S.$
+\end_inset
+
+
+\begin_inset Flex InstituteMark
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+\begin_inset Flex InstituteMark
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+Department of Statistics, University of Kentucky
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[height=2cm]{New-UK-logo-1.jpg}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The following causes the table of contents to be shown at the beginning
+ of every subsection.
+ Delete this, if you do not want it.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSubsection[]{%
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GitHub
+\end_layout
+
+\begin_layout Itemize
+R packages in RStudio with devtools, and roxygen2
+\end_layout
+
+\begin_layout Itemize
+Using Rstudio and GitHub 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+GitHub
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What is GitHub?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Open source and private code/document publishing web platform.
+\end_layout
+
+\begin_layout Itemize
+Cloud and desktop based version control system 
+\end_layout
+
+\begin_layout Itemize
+Cloud based collaboration system built in
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why use GitHub now?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Organization
+\end_layout
+
+\begin_layout Itemize
+Collaboration
+\end_layout
+
+\begin_layout Itemize
+Networking
+\end_layout
+
+\begin_layout Itemize
+Resume
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How do I use it?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First go to https://github.com/ and make an account.
+ Public version is free! Be sure to download and install git.
+ https://git-scm.com/downloads.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Make a 
+\begin_inset Quotes eld
+\end_inset
+
+New Repository
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Kind of like a 
+\begin_inset Quotes eld
+\end_inset
+
+New Project
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\begin_inset Graphics
+	filename newrepository.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Adding new code or updated code to current Repository is easy from Linux,
+ Mac, or Windows.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Command line environments for Linux, Mac, or Windows (recommended).
+\end_layout
+
+\begin_layout Itemize
+Windows GUI
+\end_layout
+
+\begin_layout Itemize
+R package, and in Rstudio (more later)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+YouTube: Learncode.academy 
+\begin_inset Quotes eld
+\end_inset
+
+Github Tutorial For Beginners.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+R Packages
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Getting Started
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First install two packages: Roxygen2, and devtools.
+\end_layout
+
+\begin_layout Itemize
+Create a new project in Rstudio: File>New Project
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Graphics
+	filename newproject.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+New R Package 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Graphics
+	filename rpackage.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pakage Information
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Graphics
+	filename pakcageinfo.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Be sure to select 
+\begin_inset Quotes eld
+\end_inset
+
+Create a git repository
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Configuring RStudio and GitHub
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Next, we need to configure Rstudio to use Roxogyn2 to generate documentation
+ files.
+ 
+\end_layout
+
+\begin_layout Itemize
+To Configure: Build>Configure Build Tools>Build Tools>Check 
+\begin_inset Quotes eld
+\end_inset
+
+Generate documentation with Roxygen
+\begin_inset Quotes erd
+\end_inset
+
+> Check all boxes>OK.
+ 
+\end_layout
+
+\begin_layout Itemize
+Next, Go to Tools>Global Options>Git/SVN and create RSA key.
+ Enter a password you can remember.
+ After that, click View public key and copy it.
+\end_layout
+
+\begin_layout Itemize
+Go to GitHub.
+ Go into Edit Profile on your main page.
+ Select SSH Keys.
+ Add SSH Key.
+ Title it and paste the RSA key that you copied into the key field on github.
+ Click 
+\begin_inset Quotes eld
+\end_inset
+
+Add Key
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More GitHub Configuration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Now to connect our new package with a GitHub repository.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First make sure that the repository is created.
+ You do this on GitHub.
+\end_layout
+
+\begin_layout Itemize
+Next, we will connect GitHub and our project.
+ In RStudio, Select Git by the Environment window.
+ Select More, then Shell.
+ Type the following commands:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+git remote add origin git@github.com:githubusername/repositoryname.git
+\end_layout
+
+\begin_layout Itemize
+git push -u origin master (be sure to commit changes before trying to push)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Only remove origin, githubusername, and repositoryname with your a name
+ of the repository, specific github username ,and the specific repository
+ name.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Building a Package
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Next, delete the hello.R and hello.rmd files from the man and R folder.
+\end_layout
+
+\begin_layout Itemize
+Edit the description file 
+\begin_inset Graphics
+	filename description.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Using Roxygen2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Graphics
+	filename squarefunc_roxy.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Test and Build the package to make sure it works correctly and the help
+ files are showing up.
+ Roxygen2 relies on Latex so make sure that is installed on your system
+ before proceeding.
+ Other errors can be combatted with google searching.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finishing Touches
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename git.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We should now be able to make changes to our package and commit and push
+ changes to our GitHub account.
+\end_layout
+
+\begin_layout Itemize
+First, we commit pending changes with the Commit Button.
+ Select the files you want to publish or change on your Github Repo.
+\end_layout
+
+\begin_layout Itemize
+Then, when we are ready to actually change them, click Push.
+ It will come up with a dialog box asking you for your RSA password.
+ Enter it and click submit.
+\end_layout
+
+\begin_layout Itemize
+Download your own package with devtools::install_github("username/reponame")
+ .
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section*
+Summary
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Check out : 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://r-pkgs.had.co.nz/
+\end_layout
+
+\end_inset
+
+ for more information about building R packages in Rstudio with Roxygen2.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
